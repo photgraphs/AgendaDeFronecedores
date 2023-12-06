@@ -253,12 +253,6 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
      jtfNome.requestFocus();
     }//GEN-LAST:event_jbNovoActionPerformed
 
-    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
-     habilitaBotoes (false);
-     habilitaCampos(true);
-     jtfNome.requestFocus();
-    }//GEN-LAST:event_jbAlterarActionPerformed
-
     private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
      habilitaBotoes (false);
      LimpaCampos();
@@ -285,6 +279,12 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
     private void jtfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfNomeActionPerformed
+
+    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
+        habilitaBotoes (false);
+        habilitaCampos(true);
+        jtfNome.requestFocus();
+    }//GEN-LAST:event_jbAlterarActionPerformed
        
 
    public void habilitaBotoes (boolean estado) {
