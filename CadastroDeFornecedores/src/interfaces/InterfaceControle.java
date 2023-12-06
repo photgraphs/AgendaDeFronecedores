@@ -1,0 +1,16 @@
+package interfaces;
+
+/**
+ *
+ * @author Elaine Alves
+ */
+public interface InterfaceControle {
+    
+    public void salvarControle(Object...valor);
+
+    public void excluirControle(int id);
+    
+    public void consultarControle (Object...valor);
+    
+    
+}
