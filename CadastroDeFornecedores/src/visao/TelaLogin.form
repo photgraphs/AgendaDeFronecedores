@@ -28,7 +28,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="93" max="32767" attributes="0"/>
+              <EmptySpace pref="96" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jbAcessar" min="-2" max="-2" attributes="0"/>
@@ -47,10 +47,10 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jtSenha" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jtSenha" min="-2" pref="162" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jbtgMostrarSenha" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jtLogin" min="-2" pref="307" max="-2" attributes="0"/>
@@ -84,9 +84,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JPasswordField" name="jtSenha">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtLogin">
     </Component>
@@ -105,7 +102,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="BEM VINDO AO AGFORM"/>
+        <Property name="text" type="java.lang.String" value="BEM VINDO AO AGFORN"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JToggleButton" name="jbtgMostrarSenha">
