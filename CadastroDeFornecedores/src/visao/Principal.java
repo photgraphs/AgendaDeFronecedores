@@ -24,6 +24,7 @@ public class Principal extends javax.swing.JFrame {
         jmArquivo = new javax.swing.JMenu();
         jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
         jRadioButtonMenuItem3 = new javax.swing.JRadioButtonMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jmSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,6 +69,16 @@ public class Principal extends javax.swing.JFrame {
         });
         jmArquivo.add(jRadioButtonMenuItem3);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/contato.png"))); // NOI18N
+        jMenuItem1.setText("Cadastro de Materia Prima");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jmArquivo.add(jMenuItem1);
+
         jmbBarraMenu.add(jmArquivo);
 
         jmSobre.setMnemonic('s');
@@ -102,6 +113,12 @@ public class Principal extends javax.swing.JFrame {
         jDescktop.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        CadastroMateriaPrima tela = new  CadastroMateriaPrima ();
+        jDescktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
    
     public static void main(String args[]) {
     
@@ -114,6 +131,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jDescktop;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
     private javax.swing.JMenu jmArquivo;
