@@ -2,9 +2,6 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import javax.swing.JOptionPane;
-
-
 
 /**
  *
@@ -26,7 +23,9 @@ public class ConexaoBanco {
             con = DriverManager.getConnection(url, user, password);
 
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "Erro ao conectar o Banco de Daos" + erro);
+           // JOptionPane.showMessageDialog(null, "Erro ao conectar o Banco de Daos" + erro);
+            //serve de apoio para esclarecer o erro
+            
         }
           
         return con;

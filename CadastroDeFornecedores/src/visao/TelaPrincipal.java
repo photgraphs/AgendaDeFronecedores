@@ -6,11 +6,11 @@ import javax.swing.JFrame;
  *
  * @author Elaine Alves
  */
-public class Principal extends javax.swing.JFrame {
+public class TelaPrincipal extends javax.swing.JFrame {
 
    
     
-    public Principal() {
+    public TelaPrincipal() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
@@ -120,14 +120,7 @@ public class Principal extends javax.swing.JFrame {
         tela.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
    
-    public static void main(String args[]) {
-    
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-            new Principal().setVisible(true);
-            }
-        });
-    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jDescktop;
