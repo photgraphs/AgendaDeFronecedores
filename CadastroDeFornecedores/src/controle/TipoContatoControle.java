@@ -3,9 +3,7 @@ package controle;
 import interfaces.InterfaceControle;
 import modelo.TipoContatoModelo;
 import dao.TipoControleDao;
-import java.sql.SQLDataException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 /**
  *
  * @author Elaine
@@ -42,11 +40,8 @@ public class TipoContatoControle implements InterfaceControle {
 
     @Override
     public void consultarControle(Object... valor) {
-        try {
-            tcd.consutarDao(valor);
-        } catch (SQLDataException ex) {
-            Logger.getLogger(TipoContatoControle.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+      
+   }
+
 
 }

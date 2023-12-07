@@ -13,6 +13,7 @@ public class TipoContatoModelo {
    private String cidade;
    private String telefone;
 
+   
     public int getId() {
         return id;
     }
@@ -67,5 +68,18 @@ public class TipoContatoModelo {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+    public Object[]toArray(){
+    Object[] obj = new Object[7];
+    
+         obj[1] = id;
+         obj[2] = nome;
+         obj[4] = cnpj;
+         obj[5] = endereco;
+         obj[6] = estado;
+         obj[7] = cidade;
+         obj[8] = telefone;
+       return obj;
+            
     }
 }

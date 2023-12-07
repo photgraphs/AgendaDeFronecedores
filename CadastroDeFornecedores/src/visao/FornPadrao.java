@@ -1,19 +1,28 @@
 package visao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+
 /**
  *
  * @author Elaine Alves
  */
 
 abstract public class FornPadrao extends javax.swing.JInternalFrame {
-
+    Connection conexao = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
     abstract public void salvarFornecedorVisao();
+    
+    
 
     public FornPadrao() {
         initComponents();
         habilitaBotoes(true);
         habilitaCampos(false);
-        jtfId.setEditable(false);
+       
         
         
             }
@@ -25,14 +34,10 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
 
         jpnBoteos = new javax.swing.JPanel();
         jbNovo = new javax.swing.JButton();
-        jbAlterar = new javax.swing.JButton();
-        jbExcluir = new javax.swing.JButton();
         jbSalvar = new javax.swing.JButton();
         jbCancelar = new javax.swing.JButton();
         jbFechar = new javax.swing.JButton();
         jpnFomulario = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jtfId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jtfNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -55,22 +60,6 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
         jbNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbNovoActionPerformed(evt);
-            }
-        });
-
-        jbAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        jbAlterar.setText("Alterar");
-        jbAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbAlterarActionPerformed(evt);
-            }
-        });
-
-        jbExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/remove.png"))); // NOI18N
-        jbExcluir.setText("Exluir");
-        jbExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbExcluirActionPerformed(evt);
             }
         });
 
@@ -105,11 +94,7 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
             .addGroup(jpnBoteosLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jbNovo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbAlterar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbExcluir)
-                .addGap(75, 75, 75)
+                .addGap(303, 303, 303)
                 .addComponent(jbSalvar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbCancelar)
@@ -123,8 +108,6 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jpnBoteosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbNovo)
-                    .addComponent(jbAlterar)
-                    .addComponent(jbExcluir)
                     .addComponent(jbSalvar)
                     .addComponent(jbCancelar)
                     .addComponent(jbFechar))
@@ -132,14 +115,6 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
         );
 
         jpnFomulario.setBackground(new java.awt.Color(255, 255, 204));
-
-        jLabel1.setText("Codigo");
-
-        jtfId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfIdActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText("Nome");
 
@@ -164,7 +139,7 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
         jpnFomularioLayout.setHorizontalGroup(
             jpnFomularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnFomularioLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(49, 49, 49)
                 .addGroup(jpnFomularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel6)
@@ -172,25 +147,19 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpnFomularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jtfCidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                        .addComponent(jtfEstado, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(jtfCidade, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jtfEstado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnFomularioLayout.setVerticalGroup(
             jpnFomularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnFomularioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnFomularioLayout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,7 +183,7 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
                 .addComponent(jLabel7)
                 .addGap(1, 1, 1)
                 .addComponent(jtfTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -253,11 +222,6 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
      jtfNome.requestFocus();
     }//GEN-LAST:event_jbNovoActionPerformed
 
-    private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
-     habilitaBotoes (false);
-     LimpaCampos();
-    }//GEN-LAST:event_jbExcluirActionPerformed
-
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
      habilitaBotoes(true);
      habilitaCampos(false);
@@ -272,25 +236,14 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
      LimpaCampos();
     }//GEN-LAST:event_jbCancelarActionPerformed
 
-    private void jtfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIdActionPerformed
-    
-    }//GEN-LAST:event_jtfIdActionPerformed
-
     private void jtfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfNomeActionPerformed
-
-    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
-        habilitaBotoes (false);
-        habilitaCampos(true);
-        jtfNome.requestFocus();
-    }//GEN-LAST:event_jbAlterarActionPerformed
        
 
    public void habilitaBotoes (boolean estado) {
        jbNovo.setEnabled(estado);
-       jbAlterar.setEnabled(estado);
-       jbExcluir.setEnabled(estado);
+       
         
        jbSalvar.setEnabled(!estado);
        jbCancelar.setEnabled(!estado);
@@ -317,16 +270,13 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JButton jbAlterar;
     private javax.swing.JButton jbCancelar;
-    private javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbFechar;
     private javax.swing.JButton jbNovo;
     private javax.swing.JButton jbSalvar;
@@ -336,7 +286,6 @@ abstract public class FornPadrao extends javax.swing.JInternalFrame {
     public javax.swing.JTextField jtfCidade;
     public javax.swing.JTextField jtfEndereco;
     public javax.swing.JTextField jtfEstado;
-    public javax.swing.JTextField jtfId;
     protected javax.swing.JTextField jtfNome;
     public javax.swing.JTextField jtfTelefone;
     // End of variables declaration//GEN-END:variables

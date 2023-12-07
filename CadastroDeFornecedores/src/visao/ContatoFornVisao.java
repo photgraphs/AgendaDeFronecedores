@@ -16,10 +16,10 @@ public class ContatoFornVisao extends FornPadrao {
     TipoContatoControle tcc = new TipoContatoControle();
     @Override
     public void salvarFornecedorVisao() {
-        tcc.salvarControle(jtfId.getText(), jtfNome.getText(),jtfCNPJ.getText(),
+        tcc.salvarControle( jtfNome.getText(),jtfCNPJ.getText(),
         jtfEndereco.getText(), jtfEstado.getText(), jtfCidade.getText(), 
         jtfTelefone.getText());
     }
-
-  
+    
+   
 }
