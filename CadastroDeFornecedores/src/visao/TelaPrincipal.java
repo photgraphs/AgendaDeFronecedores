@@ -38,7 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("AGFORM - Agenda de Controle de Fornecedores");
+        setTitle("AGFORN- Agenda de Controle de Fornecedores");
         setBackground(new java.awt.Color(255, 51, 51));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -48,6 +48,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jDescktop.setBackground(new java.awt.Color(102, 204, 255));
 
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 36)); // NOI18N
         jLabel1.setText("Seja Bem Vindo!");
 
         jlDATA.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -58,14 +59,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDescktopLayout.setHorizontalGroup(
             jDescktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDescktopLayout.createSequentialGroup()
-                .addContainerGap(1382, Short.MAX_VALUE)
+                .addContainerGap(1106, Short.MAX_VALUE)
                 .addGroup(jDescktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDescktopLayout.createSequentialGroup()
                         .addComponent(jlDATA)
                         .addGap(147, 147, 147))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDescktopLayout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(121, 121, 121))))
+                        .addGap(40, 40, 40))))
         );
         jDescktopLayout.setVerticalGroup(
             jDescktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,7 +75,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jlDATA)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(756, Short.MAX_VALUE))
+                .addContainerGap(729, Short.MAX_VALUE))
         );
 
         jmArquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/arquivo.png"))); // NOI18N
@@ -163,7 +164,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButtonMenuItem3ActionPerformed
 
     private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
-      
+        TelaBuscaForn tela = new TelaBuscaForn();
+        jDescktop.add(tela);
+        tela.setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated

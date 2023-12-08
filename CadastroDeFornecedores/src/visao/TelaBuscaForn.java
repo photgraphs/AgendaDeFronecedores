@@ -61,6 +61,8 @@ public class TelaBuscaForn extends javax.swing.JInternalFrame {
 
         setTitle("Tela de Pesquisa");
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
+
         jLabel1.setText("Codigo");
 
         jLabel2.setText("Nome");
@@ -87,7 +89,7 @@ public class TelaBuscaForn extends javax.swing.JInternalFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -103,10 +105,18 @@ public class TelaBuscaForn extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Consulta");
 
+        jbCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cancel.png"))); // NOI18N
         jbCancelar.setText("Cancelar");
 
+        jbFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Fechar.png"))); // NOI18N
         jbFechar.setText("Fechar");
+        jbFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbFecharActionPerformed(evt);
+            }
+        });
 
+        jbAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
         jbAlterar.setText("Alterar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -225,6 +235,10 @@ public class TelaBuscaForn extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFecharActionPerformed
+       dispose();
+    }//GEN-LAST:event_jbFecharActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
