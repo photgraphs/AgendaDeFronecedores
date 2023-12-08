@@ -1,9 +1,11 @@
 package dao;
 
 import interfaces.InterfaceDao;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLDataException;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import modelo.TipoContatoModelo;
 
@@ -16,6 +18,9 @@ public class TipoControleDao implements InterfaceDao{
     String sql;
     PreparedStatement stm;
     ResultSet rs;
+    
+    Connection conexao = null;
+    PreparedStatement pst = null;
     
     @Override
     public void salvarDao(Object... valor) {
@@ -63,4 +68,18 @@ public class TipoControleDao implements InterfaceDao{
         
   
     }
+    public Vector pesquisar(String pesq) throws Exception{
+    
+    Vector tb = new Vector();
+            String url = "SELECT * FROM fornecedor WHERE Nome LIKE'"+pesq+"%'";
+            stm = ConexaoBanco.abreConexao().prepareStatement(sql);
+            ResultSet rs = null ;
+            while(rs.next()){
+                
+                
+            }
+        return null;
+            
+              
+    }            
 }
